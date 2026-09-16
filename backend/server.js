@@ -52,6 +52,15 @@ app.use('/api/videos', require('./routes/videos'));
 app.use('/api', require('./routes/misc')); // coupons, banners, reviews, contact
 app.use('/api/admin', require('./routes/admin'));
 
+// Root route (for Render health check & keep-alive)
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: 'Riddhi Computer Backend API is online and running',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.status(200).json({ success: true, message: 'Riddhi Computer API is running', timestamp: new Date().toISOString() });
@@ -180,14 +189,46 @@ const cleanExit = () => {
 process.on('SIGINT', cleanExit);
 process.on('SIGTERM', cleanExit);
 
+// Keep-Alive Self Ping (Pings server every 5 minutes to prevent Render free-tier sleep)
+const startKeepAlivePing = () => {
+  const targetUrl = process.env.PING_URL || process.env.RENDER_EXTERNAL_URL || 'https://raju-fiw2.onrender.com/';
+  const PING_INTERVAL = 5 * 60 * 1000; // 5 minutes in milliseconds
+
+  console.log(`⏱️ Keep-alive auto-ping scheduled for ${targetUrl} (every 5 minutes)`);
+
+  const pingServer = async () => {
+    try {
+      if (typeof fetch === 'function') {
+        const res = await fetch(targetUrl);
+        console.log(`[${new Date().toLocaleTimeString()}] 🟢 Keep-Alive Ping successful: ${targetUrl} (Status: ${res.status})`);
+      } else {
+        const https = require('https');
+        https.get(targetUrl, (res) => {
+          console.log(`[${new Date().toLocaleTimeString()}] 🟢 Keep-Alive Ping successful: ${targetUrl} (Status: ${res.statusCode})`);
+        }).on('error', (err) => {
+          console.warn(`[${new Date().toLocaleTimeString()}] 🟡 Keep-Alive Ping warning: ${err.message}`);
+        });
+      }
+    } catch (error) {
+      console.warn(`[${new Date().toLocaleTimeString()}] 🟡 Keep-Alive Ping notice: ${error.message}`);
+    }
+  };
+
+  // Run first ping after 1 minute, then repeat every 5 minutes
+  setTimeout(pingServer, 60 * 1000);
+  setInterval(pingServer, PING_INTERVAL);
+};
+
 const server = app.listen(PORT, async () => {
   console.log(`\n====================================================`);
   console.log(`🚀 Riddhi Computer Backend & Full-Stack System`);
   console.log(`   Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`   Backend API: http://localhost:${PORT}`);
   console.log(`   Frontend UI: http://localhost:3000`);
+  console.log(`   Keep-Alive:  Ping every 5 mins enabled`);
   console.log(`====================================================\n`);
 
+  startKeepAlivePing();
   await ensureFrontendRunning();
   autoOpenHome();
 });
@@ -200,6 +241,7 @@ server.on('error', (err) => {
     console.error(`\n❌ Server error: ${err.message}\n`);
   }
 });
+
 
 
 

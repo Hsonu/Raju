@@ -219,7 +219,7 @@ const startKeepAlivePing = () => {
   setInterval(pingServer, PING_INTERVAL);
 };
 
-const server = app.listen(PORT, async () => {
+const server = app.listen(PORT, '0.0.0.0', async () => {
   console.log(`\n====================================================`);
   console.log(`🚀 Riddhi Computer Backend & Full-Stack System`);
   console.log(`   Environment: ${process.env.NODE_ENV || 'development'}`);

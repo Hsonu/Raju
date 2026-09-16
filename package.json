@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "node start-dev.js",
     "start": "node start-dev.js",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "cd backend && npm start",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "build:backend": "cd backend && npm install",
     "dev:backend": "npm run dev --prefix backend",
     "dev:frontend": "npm run dev --prefix frontend",
     "seed": "npm run seed --prefix backend",

@@ -1,0 +1,353 @@
+/* ═══════════════════════════════════
+   HEADER — Warm Studio Ivory Bar
+   Refined alabaster background, crisp ink text,
+   copper accents and clear editorial hierarchy.
+   ═══════════════════════════════════ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--header-height, 56px);
+  background: var(--paper, #FAF7F2);
+  border-bottom: 1px solid var(--rule-faint, #D8D0C4);
+  z-index: 999999;
+  transition: background 220ms cubic-bezier(0.25, 0.1, 0.25, 1),
+              box-shadow 220ms cubic-bezier(0.25, 0.1, 0.25, 1),
+              border-color 220ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.header.scrolled {
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(30, 28, 25, 0.05);
+  border-bottom-color: var(--rule, #C4B9A8);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 5rem);
+}
+
+/* Logo — Editorial wordmark */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  color: var(--ink, #1E1C19);
+  flex-shrink: 0;
+}
+
+.logoIcon {
+  width: 26px;
+  height: 26px;
+  color: var(--accent, #7A4028);
+}
+
+.logoIcon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoName {
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink, #1E1C19);
+}
+
+.logoSub {
+  font-family: var(--sans, 'IBM Plex Sans', sans-serif);
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--ink-muted, #7A756D);
+  margin-top: 2px;
+  text-transform: uppercase;
+}
+
+/* Desktop Nav — Crisp ink text with copper hover */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navLink {
+  padding: 6px 12px;
+  font-family: var(--sans, 'IBM Plex Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-light, #4A4640);
+  text-decoration: none;
+  position: relative;
+  transition: color 220ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 12px;
+  right: 12px;
+  height: 1.5px;
+  background: var(--accent, #7A4028);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.navLink:hover {
+  color: var(--ink, #1E1C19);
+}
+
+.navLink:hover::after {
+  transform: scaleX(1);
+}
+
+.navLink.active {
+  color: var(--accent, #7A4028);
+  font-weight: 600;
+}
+
+.navLink.active::after {
+  transform: scaleX(1);
+  background: var(--accent, #7A4028);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.repairBtn {
+  font-family: var(--sans, 'IBM Plex Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--paper, #F3EEE6);
+  background: var(--accent, #7A4028);
+  padding: 6px 16px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 220ms cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 180ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.repairBtn:hover {
+  background: var(--accent-light, #9B6344);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.cartBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--ink-light, #4A4640);
+  transition: color 220ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.cartBtn:hover {
+  color: var(--accent, #7A4028);
+}
+
+.userBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: var(--ink-light, #4A4640);
+  transition: color 220ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.userBtn:hover {
+  color: var(--accent, #7A4028);
+}
+
+.loginBtn {
+  font-family: var(--sans, 'IBM Plex Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink, #1E1C19);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule, #C4B9A8);
+  padding-bottom: 1px;
+  transition: color 220ms cubic-bezier(0.25, 0.1, 0.25, 1), border-color 220ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.loginBtn:hover {
+  color: var(--accent, #7A4028);
+  border-color: var(--accent, #7A4028);
+}
+
+/* ─── Mobile Menu Toggle ─── */
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 18px;
+  position: relative;
+  z-index: 110;
+}
+
+.menuToggle span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--ink, #1E1C19);
+  position: absolute;
+  left: 0;
+  transition: transform 220ms cubic-bezier(0.25, 0.1, 0.25, 1), opacity 220ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.menuToggle span:nth-child(1) { top: 2px; }
+.menuToggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+.menuToggle span:nth-child(3) { bottom: 2px; }
+
+.menuOpen span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menuOpen span:nth-child(2) {
+  opacity: 0;
+}
+.menuOpen span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ─── Overlay ─── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 28, 25, 0.45);
+  z-index: 998;
+}
+
+/* ─── Mobile Drawer ─── */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: -340px;
+  width: min(300px, 85vw);
+  height: 100vh;
+  background: var(--paper, #FAF7F2);
+  z-index: 999;
+  transition: right 280ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  overflow-y: auto;
+  border-left: 1px solid var(--rule, #C4B9A8);
+  box-shadow: -4px 0 20px rgba(30, 28, 25, 0.08);
+}
+
+.mobileMenuOpen {
+  right: 0;
+}
+
+.mobileMenuHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--rule-faint, #D8D0C4);
+}
+
+.mobileMenuHeader .logoName {
+  color: var(--ink, #1E1C19);
+}
+
+.mobileNav {
+  padding: 1rem 0;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 1.5rem;
+  font-family: var(--serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--ink, #1E1C19);
+  text-decoration: none;
+  transition: color 180ms cubic-bezier(0.25, 0.1, 0.25, 1), background 180ms;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: var(--accent, #7A4028);
+  background: var(--paper-dark, #E8DFD2);
+}
+
+.mobileDivider {
+  height: 1px;
+  background: var(--rule-faint, #D8D0C4);
+  margin: 0.5rem 1.5rem;
+}
+
+.mobileFooter {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--rule-faint, #D8D0C4);
+  display: flex;
+  gap: 1rem;
+}
+
+.mobileContact {
+  font-family: var(--sans, 'IBM Plex Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--ink-light, #4A4640);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 180ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.mobileContact:hover {
+  color: var(--accent, #7A4028);
+}
+
+/* ═══════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════ */
+@media (max-width: 1024px) {
+  .nav {
+    gap: 0;
+  }
+  .navLink {
+    padding: 6px 8px;
+    font-size: 0.68rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+  .menuToggle {
+    display: block;
+  }
+  .repairBtn {
+    display: none;
+  }
+}

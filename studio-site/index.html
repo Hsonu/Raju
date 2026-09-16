@@ -1,0 +1,353 @@
+<!-- ═══════════════════════════════════════════════════════════════
+   HERO DESIGN CRITIQUE & RATIONALE
+   
+   • Audience:
+     Institutional patrons, private residential commissioners, and cultural 
+     organizations seeking site-responsive, material-honest architecture in India.
+
+   • One-sentence offer:
+     Architecture and spatial design practice in Mumbai working with 
+     raw concrete, timber, and calibrated light across complex sites.
+
+   • Why this composition fits THIS project:
+     Mānasa is an architectural practice rooted in material honesty and tectonic 
+     restraint. The asymmetric editorial composition pairs an oversized serif 
+     headline ("Buildings that remember the ground") with a monograph-style photograph 
+     crop, chapter index 01, concrete proof lines, a sharp printed action, and 
+     a quiet secondary text link.
+
+   • 5-second test result:
+     A visitor immediately understands: (1) Mānasa is an architecture practice in 
+     Mumbai, (2) They build site-specific work in concrete and timber, and 
+     (3) The primary next step is to explore selected work or commission a project.
+   ═══════════════════════════════════════════════════════════════ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mānasa is a design and architecture practice based in Mumbai. We work with concrete, timber, and light across residential, cultural, and institutional projects.">
+  <title>Mānasa — Architecture &amp; Design Practice</title>
+
+  <!-- Fonts: Cormorant Garamond (editorial serif) + IBM Plex Sans (grotesque) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Film grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ─── HEADER ─── -->
+  <header class="site-header" id="site-header">
+    <nav class="header-inner">
+      <a href="#" class="header-mark">Mānasa</a>
+      <ul class="header-nav" role="list">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#practice">Practice</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile nav overlay -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#practice">Practice</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- ─── OPENING ─── -->
+    <section class="opening" aria-labelledby="opening-heading">
+      <div class="opening-grid">
+        <div class="opening-text">
+          <p class="opening-chapter" aria-hidden="true">01</p>
+          <h1 id="opening-heading" class="opening-headline">
+            Buildings<br>
+            that remember<br>
+            <em>the ground</em>
+          </h1>
+          <p class="opening-sub">
+            Architecture practice, Mumbai.<br>
+            Concrete, timber, difficult sites.
+          </p>
+          <div class="opening-actions">
+            <a href="#contact" class="opening-primary-action">Commission a project →</a>
+            <a href="#work" class="opening-secondary-link">Selected work →</a>
+          </div>
+        </div>
+        <figure class="opening-image">
+          <img
+            src="images/interior.jpg"
+            alt="Concrete interior staircase with angular light from clerestory windows"
+            width="720"
+            height="960"
+            loading="eager"
+          >
+          <figcaption>Assembly Hall — Pune, 2022</figcaption>
+        </figure>
+      </div>
+      <div class="opening-rule" aria-hidden="true"></div>
+    </section>
+
+    <!-- ─── SELECTED WORK ─── -->
+    <section class="work" id="work" aria-labelledby="work-heading">
+      <div class="section-label">
+        <p class="section-chapter" aria-hidden="true">02</p>
+        <h2 id="work-heading" class="section-title">Selected Work</h2>
+      </div>
+
+      <div class="work-grid">
+
+        <article class="project project--large">
+          <a href="#" class="project-link">
+            <figure>
+              <div class="project-image-wrap">
+                <img
+                  src="images/courtyard.jpg"
+                  alt="Aerial view of sandstone courtyard house in dry landscape"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                >
+              </div>
+              <figcaption class="project-caption">
+                <span class="project-name">Stone Court Residence</span>
+                <span class="project-meta">Alibaug, Maharashtra — 2023</span>
+              </figcaption>
+            </figure>
+          </a>
+        </article>
+
+        <article class="project project--tall">
+          <a href="#" class="project-link">
+            <figure>
+              <div class="project-image-wrap">
+                <img
+                  src="images/interior.jpg"
+                  alt="Concrete interior with angular clerestory light"
+                  width="720"
+                  height="960"
+                  loading="lazy"
+                >
+              </div>
+              <figcaption class="project-caption">
+                <span class="project-name">Kamal Nehru Assembly</span>
+                <span class="project-meta">Pune — 2022</span>
+              </figcaption>
+            </figure>
+          </a>
+        </article>
+
+        <article class="project project--wide">
+          <a href="#" class="project-link">
+            <figure>
+              <div class="project-image-wrap">
+                <img
+                  src="images/timber.jpg"
+                  alt="Weathered timber cladding detail with visible fasteners"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                >
+              </div>
+              <figcaption class="project-caption">
+                <span class="project-name">Coastal Reading Room</span>
+                <span class="project-meta">Kochi, Kerala — 2024</span>
+              </figcaption>
+            </figure>
+          </a>
+        </article>
+
+        <article class="project project--medium">
+          <a href="#" class="project-link">
+            <figure>
+              <div class="project-image-wrap project-image-wrap--duotone">
+                <img
+                  src="images/courtyard.jpg"
+                  alt="Courtyard house viewed from garden approach"
+                  width="1200"
+                  height="900"
+                  loading="lazy"
+                >
+              </div>
+              <figcaption class="project-caption">
+                <span class="project-name">Garden Wall House</span>
+                <span class="project-meta">Nashik — 2021</span>
+              </figcaption>
+            </figure>
+          </a>
+        </article>
+
+        <article class="project project--small">
+          <a href="#" class="project-link">
+            <figure>
+              <div class="project-image-wrap">
+                <img
+                  src="images/timber.jpg"
+                  alt="Timber joinery detail in warm light"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                >
+              </div>
+              <figcaption class="project-caption">
+                <span class="project-name">Temple Workshop</span>
+                <span class="project-meta">Udaipur — 2020</span>
+              </figcaption>
+            </figure>
+          </a>
+        </article>
+
+      </div>
+
+      <p class="work-cta">
+        <a href="#">View complete archive</a>
+      </p>
+    </section>
+
+    <!-- ─── PULL QUOTE (breaks the grid intentionally) ─── -->
+    <aside class="pullquote" aria-label="Practice philosophy">
+      <div class="pullquote-ruled-margin" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <blockquote>
+        <p>"We don't believe buildings should perform. They should hold still and let the weather, the light, and the people do the talking."</p>
+        <cite>— R. Mānasa, founding principal</cite>
+      </blockquote>
+    </aside>
+
+    <!-- ─── PRACTICE ─── -->
+    <section class="practice" id="practice" aria-labelledby="practice-heading">
+      <div class="section-label">
+        <p class="section-chapter" aria-hidden="true">03</p>
+        <h2 id="practice-heading" class="section-title">Practice</h2>
+      </div>
+
+      <div class="practice-grid">
+        <div class="practice-body">
+          <p class="practice-lede">
+            Mānasa was founded in 2008 in a rented Colaba office with two desks and a borrowed plotter. We still work from the same neighbourhood, though we've since acquired our own plotter.
+          </p>
+          <p>
+            The practice is ten people. We take on three to four projects at a time. This is deliberate — we've found that the quality of attention drops sharply beyond four concurrent commissions. We turn down more work than we accept.
+          </p>
+          <p>
+            Our projects tend toward the institutional and residential. We're drawn to sites that are constrained: steep, narrow, burdened by regulation, or simply difficult to love. Most of our built work is in Maharashtra and Kerala, with two completed projects in Rajasthan.
+          </p>
+          <p>
+            Materials matter more to us than form. We work primarily in exposed concrete, local stone, and reclaimed timber. We don't specify materials we haven't visited at source. This limits our palette but deepens our understanding of what each material can bear.
+          </p>
+        </div>
+        <figure class="practice-image">
+          <img
+            src="images/interior.jpg"
+            alt="Studio interior with architectural models and natural light"
+            width="720"
+            height="960"
+            loading="lazy"
+          >
+          <figcaption>Studio, Colaba — 2024</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ─── APPROACH ─── -->
+    <section class="approach" id="approach" aria-labelledby="approach-heading">
+      <div class="section-label">
+        <p class="section-chapter" aria-hidden="true">04</p>
+        <h2 id="approach-heading" class="section-title">Approach</h2>
+      </div>
+
+      <div class="approach-grid">
+        <div class="approach-item">
+          <h3>Site reading</h3>
+          <p>Every project begins with a full day on site. No cameras on the first visit. We walk the boundaries, note the prevailing wind, watch where the water settles. The brief comes second.</p>
+        </div>
+        <div class="approach-item">
+          <h3>Material sourcing</h3>
+          <p>We visit every quarry, mill, and yard before specifying. If we can't see how a stone was cut or a timber was seasoned, we don't use it. This has cost us two commissions. We're comfortable with that.</p>
+        </div>
+        <div class="approach-item">
+          <h3>Physical models</h3>
+          <p>We build every scheme as a 1:100 study model before committing to drawings. Renders are produced last, if at all. Our clients hold the model before they see a screen.</p>
+        </div>
+        <div class="approach-rule" aria-hidden="true"></div>
+        <div class="approach-item approach-item--offset">
+          <h3>Construction oversight</h3>
+          <p>A principal visits site weekly during construction. We've found that details survive when the architect is present. When they're not, junctions get simplified, reveals get filled, and the building quietly becomes something else.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section class="contact" id="contact" aria-labelledby="contact-heading">
+      <div class="section-label">
+        <p class="section-chapter" aria-hidden="true">05</p>
+        <h2 id="contact-heading" class="section-title">Contact</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-body">
+          <p>
+            For new project enquiries, write to us with a brief description of the site, the programme, and a realistic timeline. We respond to every letter within five working days.
+          </p>
+          <address>
+            <p>
+              <a href="mailto:studio@manasa.in">studio@manasa.in</a>
+            </p>
+            <p>
+              Mānasa Architecture &amp; Design<br>
+              4th Floor, Cusrow Baug<br>
+              Colaba, Mumbai 400 001
+            </p>
+            <p>
+              +91 22 2283 4100
+            </p>
+          </address>
+        </div>
+        <div class="contact-aside">
+          <p class="contact-note">
+            We do not accept speculative briefs, design competitions, or requests for free feasibility studies. We're a small practice and must be selective with our time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── COLOPHON / FOOTER ─── -->
+  <footer class="colophon">
+    <div class="colophon-inner">
+      <div class="colophon-left">
+        <p class="colophon-mark">Mānasa</p>
+        <p class="colophon-city">Mumbai, India</p>
+      </div>
+      <div class="colophon-center">
+        <p>Set in Cormorant Garamond &amp; IBM Plex Sans.</p>
+        <p>Photography by the practice unless noted.</p>
+      </div>
+      <div class="colophon-right">
+        <p>&copy; 2008–2024</p>
+        <p><a href="#">Instagram</a></p>
+      </div>
+    </div>
+    <div class="colophon-rule" aria-hidden="true"></div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
